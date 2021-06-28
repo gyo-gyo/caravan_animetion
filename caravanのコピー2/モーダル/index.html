@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="style.css">
+<div class="content_list">
+    <div class="box">
+        <div class="txt"> Hopeful lessons from<br> the battle to save<br> rainforests </div>
+        <div class="day">June 19, 2017</div>
+        <div class="btn">
+            <div class="modal_btn" data-target="modal01">MORE</div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="txt"> Hopeful lessons from<br> the battle to save<br> rainforests </div>
+        <div class="day">June 19, 2017</div>
+        <div class="btn">
+            <div class="modal_btn" data-target="modal02">MORE</div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="txt"> Hopeful lessons from<br> the battle to save<br> rainforests </div>
+        <div class="day">June 19, 2017</div>
+        <div class="btn">
+            <div class="modal_btn" data-target="modal03">MORE</div>
+        </div>
+    </div>
+</div>
+<div id="modal01" class="modal">
+    <div class="modal_bg modal_close"></div>
+    <div class="modal-content">
+        <p>モーダルの中身1</p>
+        <div class="modal_close">閉じる</div>
+    </div>
+</div>
+<div id="modal02" class="modal">
+    <div class="modal_bg modal_close"></div>
+    <div class="modal-content">
+        <p>モーダルの中身2</p>
+        <div class="modal_close">閉じる</div>
+    </div>
+</div>
+<div id="modal03" class="modal">
+    <div class="modal_bg modal_close"> </div>
+    <div class="modal-content">
+        <p>モーダルの中身3</p>
+        <div class="modal_close">閉じる</div>
+    </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script>
+    $('.modal_btn').on('click', function ()
+    {
+        var target = $(this).data('target');
+        var modal = document.getElementById(target);
+        $('body').addClass('fixed');
+        $(modal).fadeIn();
+    });
+    $('.modal_close').on('click', function ()
+    {
+        $('body').removeClass('fixed');
+        $('.modal').fadeOut();
+    });
+</script>

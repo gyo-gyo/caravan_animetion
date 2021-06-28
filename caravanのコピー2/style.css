@@ -1,0 +1,312 @@
+/* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
+}
+
+a {
+  text-decoration: none;
+}
+
+header,
+nav,
+h2,
+.main-visual,
+footer {
+  font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+header {
+  width: 90%; /* 横幅 */
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.social .social_modal i {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.social {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+
+.social_modal {
+  top: 22px;
+  right: 22px;
+}
+
+header .heading {
+  /* headerタグ内のheadingクラスにのみ反映される */
+  font-size: 32px;
+}
+
+.nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.main-visual {
+  width: 100%; /* 横幅いっぱい */
+  height: 300px; /* 高さ300px */
+  background-image: url(img/mv.jpg);
+  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+  background-position: center; /* 背景画像を中央に配置 */
+}
+
+.main-visual-content {
+  width: 40%; /* 横幅40% */
+  height: 300px; /* 親の高さに揃える */
+  background-color: rgba(0, 0, 0, 0.5); /* 背景色を半透明の黒にする */
+  text-align: center; /* 文字を中央揃えにする */
+  padding-top: 105px; /* 上側の内側余白で垂直方向の位置を調整 */
+}
+
+.main-visual-Txt {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+
+  animation: SlideIn 1.6s;
+}
+
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  width: 800px; /* 横幅800px */
+  display: flex; /* Flexboxの利用 */
+  justify-content: center; /* 要素の横並び・中央寄せ */
+  margin: 0 auto; /* 要素の中央揃え */
+  padding: 70px 0; /* 上下に70px、左右に0pxの内側余白 */
+}
+
+.blog {
+  width: 640px;
+  /* margin-right: 30px; 領域の右側余白 */
+}
+
+.blog-heading {
+  border-bottom: 8px solid #f7f7f7;
+  text-align: center;
+  line-height: 0.6;
+}
+
+.blog-box {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.blog-item {
+  padding-right: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f7f7f7;
+  justify-content: flex-start;
+}
+.blog-text {
+  padding-top: 10px;
+  text-align: center;
+}
+.blog-image {
+  height: 180px;
+  animation: SlideIn1 1.6s forwards;
+}
+@keyframes SlideIn1 {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pagination {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.pagination p {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  color: #fff;
+  background-color: #acabab;
+  border-radius: 3px;
+  line-height: 30px;
+}
+
+footer {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+  background-color: #848282;
+}
+
+.footer-text {
+  color: #fff;
+}
+
+/* モーダル */
+
+.modal_btn,
+.modal_close {
+  padding: 10px 30px;
+  background-color: #fff;
+  border: 1px solid #282828;
+  border-radius: 2px;
+}
+
+.day {
+  padding-bottom: 10px;
+}
+.content_list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: auto;
+  padding: 100px 20px;
+}
+
+.content_list .box .btn .modal_btn {
+  display: inline-block;
+  border: solid 1px #000;
+  padding: 0.2em 1em;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+}
+
+.modal_bg {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 40px;
+  border: solid 1px #000;
+}
+.box {
+  text-align: center;
+}
+
+body.fixed {
+  overflow: hidden;
+}
+
+.top-bt {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+}
+
+.top-bt a {
+  display: block;
+  background-color: #ccc;
+  text-align: center;
+  color: #222;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 5px 10px;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+
+.top-bt a:hover {
+  display: block;
+  background-color: #b2d1fb;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 425px) {
+  header {
+    width: 100%;
+  }
+
+  .social {
+    display: none;
+  }
+
+  .main-visual-content {
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+    display: block;
+  }
+
+  .blog {
+    width: 100%;
+    margin: 0;
+  }
+  .blog-item {
+  }
+
+  .blog-box {
+    padding-left: 5%;
+    padding-right: 2%;
+  }
+
+  .blog-text {
+    /* width: 49%; */
+    padding-top: 5px;
+  }
+
+  .pagination {
+    margin-bottom: 50px;
+  }
+  .modal_close {
+    border: 0px;
+  }
+}
